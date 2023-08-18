@@ -1,0 +1,346 @@
+{{ define "head_extra" }}
+<style type="text/css">
+
+    #peopleModelWidget {
+    height: 100%;
+    }
+    
+    .people-model-avatar {
+        width: 100%;
+        height: auto;
+    }
+
+    #newsAccordion img {
+        float: left;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+</style>
+{{ end }}
+
+{{ define "breadcrumb" }}
+&nbsp;
+{{ end }}
+
+{{ define "main" }} <!-- The part of the page that begins to differ between templates -->
+<div class="row px-2">
+    <div id="main-content" class="col"> <!-- Main Section -->
+
+        <!-- BEGIN: Alert Banners -->
+        <div class="alert alert-warning alert-dismissible fade show d-none" role="alert">
+            <p class="m-0">
+                <i class="bi bi-info-circle-fill"></i>
+                <strong>Planned Maintenance</strong>
+            </p>
+            <p class="m-0">JAMIS will be offline for maintenance this Sunday 08:00-10:00 ET</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <!-- END: Alert Banner -->
+
+
+        <div class="row">
+            <div class="col-6">
+                <!-- BEGIN: Quicklinks -->
+                <div class="row gx-4 gy-4">
+                    <div class="col-md-4">
+                        <a href="#" class="btn btn-secondary bg-gradient w-100 h-100 py-4">
+                            <i class="bi bi-calendar-check-fill fs-1"></i><br/>
+                            <span class="fs-5">Timesheets</span>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="btn btn-secondary bg-gradient w-100 h-100 py-4">
+                            <i class="bi bi-patch-question-fill fs-1"></i><br/>
+                            <span class="fs-5">Helpdesk</span>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="btn btn-secondary bg-gradient w-100 h-100 py-4">
+                            <i class="bi bi-briefcase-fill fs-1"></i><br/>
+                            <span class="fs-5">Payroll</span>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="btn btn-secondary bg-gradient w-100 h-100 py-4">
+                            <i class="bi bi-file-earmark-text-fill fs-1"></i><br/>
+                            <span class="fs-5">Policies</span>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="btn btn-secondary bg-gradient w-100 h-100 py-4">
+                            <i class="bi bi-credit-card-2-back-fill fs-1"></i><br/>
+                            <span class="fs-5">Expenses</span>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="btn btn-secondary bg-gradient w-100 h-100 py-4">
+                            <i class="bi bi-speedometer fs-1"></i><br/>
+                            <span class="fs-5">Reports</span>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="btn btn-secondary bg-gradient w-100 h-100 py-4">
+                            <i class="bi bi-ui-checks fs-1"></i><br/>
+                            <span class="fs-5">Workflows</span>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="btn btn-secondary bg-gradient w-100 h-100 py-4">
+                            <i class="bi bi-person-vcard-fill fs-1"></i><br/>
+                            <span class="fs-5">Directory</span>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="btn btn-secondary bg-gradient w-100 h-100 py-4">
+                            <i class="bi bi-tools fs-1"></i><br/>
+                            <span class="fs-5">Tools</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- BEGIN: Quicklinks -->
+            </div>
+            
+            <div class="col-6">
+                <!-- BEGIN: People Model Widget -->
+                <div id="peopleModelWidget" class="card overflow-hidden">
+                    <div class="p-2 bg-secondary bg-gradient text-light">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img class="people-model-avatar" src="/img/avatar.png" alt="User Avatar">
+                            </div>
+                            <div class="col-md-10">
+                                <h3 class="mt-1 fw-light">Donni Hayward</h3>
+                                <h5 class="widget-user-desc">Innovation Capability Lead</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-0">
+                        <div class="accordion accordion-flush" id="peopleModelAccordion">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <strong>Job Profile</strong>: Technologist - DevSecOps Engineer
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#peopleModelAccordion">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu lobortis elementum nibh tellus molestie nunc non blandit massa. Morbi enim nunc faucibus a pellentesque. Convallis aenean et tortor at risus viverra adipiscing at in. Consequat nisl vel pretium lectus quam id leo in.</p>
+                                    <p>Sed sed risus pretium quam vulputate dignissim suspendisse in est. Commodo viverra maecenas accumsan lacus vel. Hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Eu tincidunt tortor aliquam nulla facilisi cras fermentum. Euismod nisi porta lorem mollis aliquam ut porttitor. Id velit ut tortor pretium viverra suspendisse. Lorem sed risus ultricies tristique nulla aliquet.</p>
+                                    <p class="text-end"><a href="#" class="btn btn-primary bg-gradient">Read More</a></p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <strong>Job Level</strong>: L3
+                                </button>
+                              </h2>
+                              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#peopleModelAccordion">
+                                <div class="accordion-body">
+                                    <p>Arcu risus quis varius quam quisque id. Eu ultrices vitae auctor eu augue ut lectus arcu. Id interdum velit laoreet id donec ultrices tincidunt arcu non. Laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt. Diam quis enim lobortis scelerisque fermentum dui faucibus in. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Quam viverra orci sagittis eu volutpat odio facilisis.</p>
+                                    <p>Neque aliquam vestibulum morbi blandit. Nullam eget felis eget nunc lobortis. Sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum. Adipiscing enim eu turpis egestas pretium aenean pharetra magna. Sed viverra tellus in hac. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Ligula ullamcorper malesuada proin libero nunc consequat interdum.</p>
+                                    <p>Pellentesque nec nam aliquam sem. Urna nunc id cursus metus aliquam eleifend mi. Tristique et egestas quis ipsum suspendisse ultrices gravida dictum. Tincidunt augue interdum velit euismod in pellentesque massa placerat. Bibendum at varius vel pharetra vel turpis nunc eget lorem. Leo vel fringilla est ullamcorper eget.</p>
+                                    <p class="text-end"><a href="#" class="btn btn-primary bg-gradient">Read More</a></p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <strong>Home Organization</strong>: DDC (Corporate)
+                                </button>
+                              </h2>
+                              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#peopleModelAccordion">
+                                <div class="accordion-body">
+                                  <p>Duis ut diam quam nulla porttitor massa. Id volutpat lacus laoreet non curabitur. Aliquam purus sit amet luctus venenatis lectus magna fringilla. Ut enim blandit volutpat maecenas. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. Scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis. Dignissim cras tincidunt lobortis feugiat vivamus at augue eget. Purus in massa tempor nec feugiat nisl pretium fusce.</p>
+                                  <p class="text-end"><a href="#" class="btn btn-primary bg-gradient">Read More</a></p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                      <strong>Business Role</strong>: People Leader
+                                  </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#peopleModelAccordion">
+                                  <div class="accordion-body">
+                                    <p>Nibh cras pulvinar mattis nunc sed. Nam aliquam sem et tortor. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Curabitur vitae nunc sed velit dignissim sodales ut eu sem. Sit amet facilisis magna etiam. Vitae sapien pellentesque habitant morbi tristique. A diam maecenas sed enim ut. Penatibus et magnis dis parturient montes nascetur ridiculus mus mauris. Sollicitudin tempor id eu nisl nunc mi ipsum. Odio aenean sed adipiscing diam donec adipiscing tristique risus. Arcu non odio euismod lacinia at quis risus. Congue quisque egestas diam in arcu cursus. Magna fringilla urna porttitor rhoncus dolor purus non enim. Risus nec feugiat in fermentum posuere. Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus. Quam adipiscing vitae proin sagittis nisl rhoncus mattis.</p>
+                                    <p class="text-end"><a href="#" class="btn btn-primary bg-gradient">Read More</a></p>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                    </div>
+                </div>
+                <!-- END: People Model Widget -->
+            </div>
+                
+        </div>
+
+        <div class="row my-5">
+            <div class="col-md-6">
+                <!-- BEGIN: News block -->
+                <div class="card overflow-hidden">
+                    <h2 id="event-list" class="text-light bg-secondary bg-gradient m-0 px-3 py-2">Recent</h2>
+                    
+                    <div class="p-0">
+                        <div class="accordion accordion-flush" id="newsAccordion">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="newsHeadingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#newsCollapseOne" aria-expanded="true" aria-controls="newsCollapseOne">
+                                    <strong>Welcome Rich Aldridge</strong>
+                                </button>
+                              </h2>
+                              <div id="newsCollapseOne" class="accordion-collapse collapse show" aria-labelledby="newsHeadingOne" data-bs-parent="#newsAccordion">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-4 pb-3">
+                                            <a href="https://ddc-dine.com/news/ddc/tenured-air-force-executive-rich-aldridge-joins-ddc/">
+                                                <img src="/welcome-rich.jpg" class="img-fluid shadow-1-strong rounded" alt="Photo of Rich Aldridge" />
+                                            </a>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Big News! We're absolutely thrilled to welcome Rich Aldridge to our executive leadership team as Executive Vice President of Global Strategy! 
+                                                With his exceptional leadership, strategy, and procurement skills, DDC and family of companies are set to soar even higher during this exciting phase of growth.</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-end"><a href="https://ddc-dine.com/news/ddc/tenured-air-force-executive-rich-aldridge-joins-ddc/" class="btn btn-primary bg-gradient">Read More</a></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="newsHeadingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#newsCollapseTwo" aria-expanded="false" aria-controls="newsCollapseTwo">
+                                    <strong>Building a Brighter Future: Empowering Navajo Communities</strong>
+                                </button>
+                              </h2>
+                              <div id="newsCollapseTwo" class="accordion-collapse collapse" aria-labelledby="newsHeadingTwo" data-bs-parent="#newsAccordion">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-4 pb-3">
+                                            <a href="https://ddc-dine.com/news/">
+                                                <img src="/navajo-nation-summit.jpg" class="img-fluid shadow-1-strong rounded" alt="Photo of summit attendees" />
+                                            </a>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Diam maecenas sed enim ut sem viverra aliquet. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Magna fringilla urna porttitor rhoncus dolor purus. Nibh mauris cursus mattis molestie. Sagittis id consectetur purus ut faucibus pulvinar elementum integer. Fames ac turpis egestas sed tempus urna et pharetra.</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-end"><a href="https://ddc-dine.com/news/" class="btn btn-primary bg-gradient">Read More</a></p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="newsHeadingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#newsCollapseThree" aria-expanded="false" aria-controls="newsCollapseThree">
+                                    <strong>Navajo Nation Economic Summit</strong>
+                                </button>
+                              </h2>
+                              <div id="newsCollapseThree" class="accordion-collapse collapse" aria-labelledby="newsHeadingThree" data-bs-parent="#newsAccordion">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-4 pb-3">
+                                            <a href="https://ddc-dine.com/news/ddc/tenured-air-force-executive-rich-aldridge-joins-ddc/">
+                                                <img src="/summit-flags.jpg" class="img-fluid shadow-1-strong rounded" alt="Photo of flags being carried at the summit" />
+                                            </a>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>At consectetur lorem donec massa sapien. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Eget lorem dolor sed viverra ipsum. Tellus cras adipiscing enim eu turpis egestas pretium aenean. Massa enim nec dui nunc mattis enim ut. Semper eget duis at tellus at urna. Lectus quam id leo in vitae.</p>
+                                        </div>
+                                    </div>                                  
+                                    <p class="text-end"><a href="https://ddc-dine.com/news/" class="btn btn-primary bg-gradient">Read More</a></p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: News block -->
+
+            </div>
+            <div class="col-md-6"> 
+                <!-- START: Events Section -->
+                <div class="card overflow-hidden h-100">
+                    <h2 id="event-list" class="text-light bg-secondary bg-gradient m-0 px-3 py-2">Upcoming</h2>
+                    <div class="p-3">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="text-center m-2 p-2 bg-primary text-light">
+                                    <a href="#" class="prose text-light">
+                                        <span>
+                                            <i class="bi bi-calendar-event fs-2"></i><br/>
+                                            Nov 31, 2023<br/>
+                                            10:00 ET
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-8 p-2">
+                                <h3 class="h5"><a class="prose" href="/">Innovations Showcase</a></h3>
+                                <p>The 2023 Innovations showcase aliquet lectus proin nibh nisl condimentum id venenatis. Dictum sit amet justo donec enim.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="text-center m-2 p-2 bg-primary text-light">
+                                    <a href="#" class="prose text-light">
+                                        <span>
+                                            <i class="bi bi-calendar-event fs-2"></i><br/>
+                                            Jan 7, 2024<br/>
+                                            14:00 ET
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-8 p-2">
+                                <h3 class="h5"><a class="prose" href="/">New Year Look Ahead</a></h3>
+                                <p>See what's in store gravida quis blandit turpis cursus in.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="text-center m-2 p-2 bg-primary text-light">
+                                    <a href="#" class="prose text-light">
+                                        <span>
+                                            <i class="bi bi-calendar-event fs-2"></i><br/>
+                                            Apr 31, 2024<br/>
+                                            13:00 ET
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-8 p-2">
+                                <h3 class="h5"><a class="prose" href="/">Quarterly All-Hands</a></h3>
+                                <p>Aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Eu mi bibendum neque egestas congue quisque.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- END: Events Section -->
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '#toc-sidebar',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '#main-content',
+        // Which headings to grab inside of the contentSelector element.
+        headingSelector: 'h2, h3, h4, h5, h6',
+        activeListItemClass: 'active-li',
+        // For headings inside relative or absolute positioned containers within content.
+        hasInnerContainers: true,
+        collapseDepth: 6,
+    });
+
+</script>
+{{ end }}

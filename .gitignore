@@ -1,0 +1,10 @@
+*.lock
+public
+_gen
+dist
+node_modules
+package-lock.json
+bower_components
+.DS_Store
+.aws-credentials.json
+.awspublish*

@@ -1,0 +1,9 @@
+$primary: #C10000;
+// $secondary: #006666;
+$secondary: mix(black, #00c1c1, 80%);
+
+// $accordion-color: $secondary;
+// $accordion-border-width: 0;
+$accordion-button-focus-box-shadow: 0;
+$accordion-button-active-bg: var(--bs-secondary-bg-subtle);
+$accordion-button-active-color: var(--bs-accordion-btn-color);

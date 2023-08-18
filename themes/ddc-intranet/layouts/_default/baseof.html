@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <title>Intranet Mockup</title>
+
+    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+    {{ block "head_extra" . }}{{ end }}
+</head>
+
+<body>
+    <main class="d-flex flex-nowrap">
+        <div id="nav-sidebar"
+            class="d-flex flex-column flex-shrink-0 bg-sidebar scrollarea collapse collapse-horizontal show">
+            <div id="nav-sidebar-container" class="p-3 flex-grow-1">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark">
+                    <img src="/img/ddc-logo.png" class="img-fluid" alt="DDC Logo" />
+                </a>
+                <form class="col-12 col-lg-auto my-3" role="search">
+                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+                <ul class="nav nav-pills flex-column">
+                    {{ $currentPage := . }}
+                    {{ range .Site.Sections }}
+                    {{ $isCurrentSection := (eq $currentPage.Section .Section) }}
+                    <li class="mb-1">
+                        <button id="{{ .Title | urlize }}"
+                            class="btn btn-toggle d-inline-flex align-items-center rounded border-0 {{ if $isCurrentSection }}collapsed{{ end }}"
+                            data-bs-toggle="collapse" data-bs-target="#{{ .Title | urlize }}-collapse"
+                            aria-expanded="false">
+                            {{ .Title }}
+                        </button>
+                        <div class="collapse {{ if $isCurrentSection }}show{{ end }}" id="{{ .Title | urlize }}-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+                                {{ range .Pages }}
+                                <li><a href="{{ .RelPermalink }}" id="{{ .Title | urlize }}"
+                                        class="link-dark d-inline-flex rounded {{ if eq $currentPage . }}active{{ end }}">{{ .Title }}</a> 
+                                        
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </div>
+                        <p class="ps-4 collapsed-summary small text-muted fst-italic mb-0">
+                            {{/*  https://discourse.gohugo.io/t/use-apply-as-a-map-equivalent/39850  */}}
+                            {{ $pages := apply (.Pages | jsonify | unmarshal) "index" "." "Title" }}
+                            {{ delimit $pages ", " }}
+                        </p>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            <hr class="mx-3" />
+            <div class="dropdown pb-3 px-3">
+                <a href="#" class="d-flex align-items-center link-dark dropdown-toggle mx-auto"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-star me-2 fs-4"></i>
+                    <strong>Bookmarks</strong>
+                </a>
+                <ul class="dropdown-menu text-small shadow">
+                    <li><a href="#" class="dropdown-item">Benefits</a></li>
+                    <li><a href="#" class="dropdown-item">Travel</a></li>
+                    <li><a href="#" class="dropdown-item">Policies</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">IT Helpdesk</a></li>
+                    <li><a class="dropdown-item" href="#">Timesheets</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="sidebar-summon bg-sidebar">
+            <a data-bs-toggle="collapse" href="#nav-sidebar" role="button" aria-expanded="false"
+                aria-controls="nav-sidebar" class="align-items-center d-grid h-100">
+                <span class="text-black-50 small px-0">
+                    <i class="bi bi-arrow-left-right"></i>
+                </span>
+            </a>
+        </div>
+
+        <div id="stage" class="d-flex flex-column scrollarea flex-grow-1 bg-light">
+            <div class="container-fluid">
+                <header class="row mb-4 align-items-end">
+                    <div class="ps-3">
+                        {{ block "breadcrumb" . }}
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="text-white" href="#">DDC Intranet</a></li>
+                                <li class="breadcrumb-item"><a class="text-white" href="#">Capabilities</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    <span class="visually-hidden">{{ .Title }}</span>
+                                </li>
+                            </ol>
+                        </nav>
+                        {{ end }}
+                        <h1 class="text-white">{{ .Title }}</h1>
+                    </div>
+                </header>
+
+                <div class="row pe-4">
+                    <div class="col">
+                        {{ block "main" . }} <!-- The part of the page that begins to differ between templates -->
+                            {{ range (seq 5) }}
+                            <p>{{ partial "partials/loremipsum.html" }}</p>
+                            {{ end }}
+                        {{ end }}
+                    </div>
+                </div>
+
+                <div class="row py-3 text-center">
+                    <div class="col text-muted pt-5">
+                        <p class="mb-1">&copy; 2023 Diné Development Corporation</p>
+                        <p class="mb-0">Mission Focused. Legacy Inspired. Community Driven.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{ $bs := resources.Get "lib/bootstrap-5.3.1/dist/js/bootstrap.bundle.js" }}
+    {{ $bstoc := resources.Get "lib/bootstrap-toc-1.0.1/dist/bootstrap-toc.js" }}
+    {{ $jq := resources.Get "lib/jquery-3.6.4/jquery-3.6.4.min.js" }}
+    {{ $sidebar := resources.Get "js/sidebars.js" }}
+    {{ $jsbundle := slice $jq $bs $bstoc $sidebar | resources.Concat "js/bundle.js" | minify | fingerprint }}
+        
+    <script src="{{ $jsbundle.Permalink }}" integrity="{{ $jsbundle.Data.Integrity }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+// Variables to configure Bootstrap (e.g., colors)
+@import "bootstrap_variables.scss";
+
+// Libraries
+@import "../lib/bootstrap-5.3.1/scss/bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import "../lib/bootstrap-toc-1.0.1/dist/bootstrap-toc.min.css";
+
+// From Bootstrap 5 sidebars example
+@import "sidebars.scss";
+
+// Custom
+@import "baseof.scss";

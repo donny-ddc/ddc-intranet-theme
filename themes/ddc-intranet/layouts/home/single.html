@@ -1,0 +1,257 @@
+{{ define "main" }} <!-- The part of the page that begins to differ between templates -->
+<div class="row px-2">
+    <div id="main-content" class="col-10"> <!-- Main Section -->
+
+        <!-- Carousel -->
+        <div id="carouselExampleCaptions" class="carousel slide pb-4" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner bg-black">
+                <div class="carousel-item active">
+                    <a href="/">
+                        <img src="/img/cyber.jpg" class="d-block w-100 opacity-25" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block pe-none">
+                        <p class="h4">DDC Innovation Cloud</p>
+                        <p>{{ partial "partials/loremipsum.html" }}</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="/">
+                        <img src="/img/board.jpg" class="d-block w-100 opacity-25" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block pe-none">
+                        <p class="h4">Cloud Governance Whitepaper</p>
+                        <p>{{ partial "partials/loremipsum.html" }}</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="/">
+                        <img src="/img/fiber.jpg" class="d-block w-100 opacity-25" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block pe-none">
+                        <p class="h4">Updated Cybersecurity Slick Sheets</p>
+                        <p>{{ partial "partials/loremipsum.html" }}</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Welcome, Section -->
+        <h2 id="about">About DDC Strategic Innovations</h2>
+        <div class="row">
+            <div class="col-8 border-end">
+                <p>{{ .Content }}</p>
+            </div>
+            <div class="col-4">
+                <!-- Charter section -->
+                <p>Please take time to read the formal charter document below for an in-depth exploration on the
+                    importance of capabilities-driven growth and the role of innovation as a formal business capability
+                    for DDC. Follow the link below to view the current draft:<br/>
+                    <a class="prose" href="https://dinedevcorp.sharepoint.com/:w:/r/sites/DDC_ICEO/Shared%20Documents/Innovation%20Management/DDC%20Strategic%20Innovation%20Charter%20-%20Draft.docx?d=w5a860e25a67f4047a651ccb4dbdae41c&csf=1&web=1&e=wIH5Fq">DDC
+                        Strategic Innovations Charter
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <hr class="section"/>
+
+        <!-- Engage Section -->
+        <h2 id="engage">Engage with Strategic Innovations</h2>
+        <div class="row">
+            <div class="col">
+                <p class="h5 fst-italic">We are Here to Help!</p>
+                <p>Need help with an RFP response, RFI, SOO or client visit? Could your client or delivery team benefit
+                    from some reach back support? The DDC Strategic Innovation Team provides access into a full-time
+                    staff of experts as well as a network of the top technologists and functional SMEs across the DDC
+                    family of companies. In a Business Development context, we provide tech volume, solution
+                    architecture, capability matrix and Q&A support for all types of responses. We are available for
+                    client visits and sales calls as needed and can provide educational sessions, commissioned
+                    whitepapers and other educational materials for clients. We can also help build demos or prototypes
+                    to promote tactical selling and promotion. Finally, we provide internal innovation services for
+                    corporate departments and subsidiary operations and delivery teams. Feel free to click the Contact
+                    link above or email us at <a class="prose" href="mailto:innovation@ddc-dine.com">innovation@ddc-dine.com</a>.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="section-highlight">
+                    <h3 id="get-published" class="h4 py-1 text-white w-100 bg-black bg-opacity-25">Get Published</h3>
+                    <p class="pt-5"><a class="btn btn-primary" href="/"> Start Writing </a></p>
+                </div>
+                <p class="p-2">Are you a subject-matter expert and willing to help grow our shared Intellectual Capital?
+                    We need experts in software development, cloud adoption, cybersecurity, DevSecOps, agile
+                    methodologies and all things data to author capability slick, whitepapers and delivery
+                    methodologies!</p>
+            </div>
+            <div class="col-4">
+                <div class="section-highlight" style="--bgimg: url('/img/technology.jpg')">
+                    <h3 id="share-ideas" class="h4 py-1 text-white w-100 bg-black bg-opacity-25">Share Your Ideas</h3>
+                    <p class="pt-5"><a class="btn btn-primary" href="/">Start Ideating</a></p>
+                </div>
+                <p class="p-2">Do you have thoughts about how to improve our client's operations? Ideas for a new tool
+                    or improved process that would benefit our teams or our customer? We want to hear from you!</p>
+            </div>
+            <div class="col-4">
+                <div class="section-highlight" style="--bgimg: url('/img/student.jpg')">
+                    <h3 id="build-stuff" class="h4 py-1 text-white w-100 bg-black bg-opacity-25">Build Cool Stuff</h3>
+                    <p class="pt-5"><a class="btn btn-primary" href="/">Start Building</a></p>
+                </div>
+                <p class="p-2">Would your customers or potential customers benefit from seeing a working prototype of a
+                    tool or app? Need a software lab environment to try out new technologies? The DDC Strategic
+                    Innovation Team is here to help!</p>
+            </div>
+        </div>
+
+        <hr class="section"/>
+
+        <!-- IC Section -->
+        <h2 id="shared-ic">Shared Intellectual Capital</h2>
+        <div class="row">
+            <div class="col">
+                <p class="h5 fst-italic">Dolor Sit Amet</p>
+                <p>{{ partial "partials/loremipsum.html" }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="section-highlight" style="--bgimg: url('/img/bulbs.jpg')">
+                    <h3 id="whitepapers" class="h4 py-1 text-white w-100 bg-black bg-opacity-25">Capability
+                        Whitepapers</h3>
+                    <p class="pt-5"><a class="btn btn-primary" href="/"> Start Writing </a></p>
+                </div>
+                <p class="p-2">Whitepapers are a longer-form medium suitable for in-depth exploration of DDC
+                    capabilities,
+                    innovations and thought leadership on a variety of topics. Whitepapers exist as a specific type of
+                    artifact within DDC's canon of shared, tangible intellectual capital and are carefully positioned
+                    between the short-form, marketing like language found in a capability slick and the more
+                    comprehensive treatment of a given discipline found in a capability delivery playbook. To that end,
+                    a whitepaper will typically have a corresponding capability slick and be directly related to a
+                    larger discipline covered by one of our delivery capability playbooks. This provides our SMEs,
+                    technologists and functional experts across DDC a great deal of flexibility in the topics they can
+                    address while still staying well within DDC strategic guardrails.</p>
+            </div>
+            <div class="col-6">
+                <div class="section-highlight" style="--bgimg: url('/img/laptop.jpg')">
+                    <h3 id="playbooks" class="h4 py-1 text-white w-100 bg-black bg-opacity-25">Capability Playbooks</h3>
+                    <p class="pt-5"><a class="btn btn-primary" href="/">
+                        Start Writing
+                    </a></p>
+                </div>
+                <p class="p-2">Capability Delivery Playbooks are a type of DDC shared intellectual capital which
+                    represent an
+                    encapsulation of DDC's methodology or approach to execution and carry the DDC Spectrum branding.
+                    Playbooks are developed to address key practices areas within each of DDC's Digital Transformation
+                    themed focus areas including Data Enablement, Data Science, Cloud Adoption, Modern Software
+                    Development and ITSM/DevOps. Inasmuch as Playbook content is targeted towards guiding and ensuring
+                    quality delivery, most Playbook content will be considered company proprietary. Our Innovation
+                    Capability Leads are responsible for identifying, prioritizing and leading Playbook development
+                    based on their assigned area of focus.</p>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="section-highlight" style="--bgimg: url('/img/space.jpg')">
+                    <h3 id="slicks" class="h4 py-1 text-white w-100 bg-black bg-opacity-25">Capability Slicks</h3>
+                    <p class="pt-5"><a class="btn btn-primary" href="/"> Start Writing </a></p>
+                </div>
+                <p class="p-2">Capability Slicks are one page, selling focused documents which summarizes the
+                    differentiated value
+                    proposition of a specific capability, technique, process, methodology or innovation provided by our
+                    DDC family of companies. These documents are designed to be printed on high quality paper or card
+                    stock and serve as introductory or leave-behind materials for existing or potential clients. These
+                    documents have also proven to be a reliable source of ready-made, cut-n-paste materials for RFI's,
+                    SOOs and other brief response opportunities. Delivery teams can use these documents to support
+                    tactical selling opportunities.</p>
+
+            </div>
+
+            <div class="col-4">
+                <div class="section-highlight" style="--bgimg: url('/img/cyber.jpg')">
+                    <h3 id="communities" class="h4 py-1 text-white w-100 bg-black bg-opacity-25">Developed
+                        Capabilities</h3>
+                    <p class="pt-5"><a class="btn btn-primary" href="/"> Join a Community </a></p>
+                </div>
+                <p class="p-2">Outside of capability slicks and whitepapers, this content showcases specific
+                    accomplishments in a
+                    variety of mediums. This includes capabilities we've developed for internal usage, demos we've
+                    presented to existing or prospective clients or content developed for reach back engagements. We
+                    also showcase content developed by the Communities of Practice and Communities of Interest (CoP/CoI)
+                    we sponsor.</p>
+            </div>
+            <div class="col-4">
+                <div class="section-highlight" style="--bgimg: url('/img/board.jpg')">
+                    <h3 id="presentations" class="h4 py-1 text-white w-100 bg-black bg-opacity-25">Industry
+                        Presentations</h3>
+                    <p class="pt-5"><a class="btn btn-primary" href="/"> Propose a Presentation </a></p>
+                </div>
+                <p class="p-2">Our extended team of innovation professionals, solution architects and accomplished
+                    technologists are
+                    encouraged to develop and maintain a healthy degree of industry engagement. This section showcases
+                    presentation materials, blog content and videos where our team has presented at a variety of
+                    industry, professional, technical and customer conferences and forums. </p>
+            </div>
+        </div>
+
+        <hr class="section"/>
+
+        <div class="row">
+            <div class="col"> <!-- Events Section -->
+                <h2 id="event-list">Events</h2>
+                <h3 id="innovations-showcase" class="h5"><a class="prose" href="/">Innovations Showcase</a></h3>
+                <p class="small"><i class="bi bi-calendar-event"></i> Nov 42, 2023 10:00 ET</p>
+                <p>The 2023 Innovations showcase ...</p>
+                <h3 id="new-year" class="h5"><a class="prose" href="/">New Year Look Ahead</a></h3>
+                <p class="small"><i class="bi bi-calendar-event"></i> Jan 7, 2024 14:00 ET</p>
+                <p>See what's in store f...</p>
+            </div>
+            <div class="col"> <!-- Tools Section -->
+                <h2 id="tools">Tools</h2>
+                <h3 id="viima" class="h5"><a class="prose" href="/">VIIMA Innovation Hub</a></h3>
+                <p>{{ partial "partials/loremipsum.html" }}</p>
+                <h3 id="past-performance" class="h5"><a class="prose" href="/">Past Performance Database</a></h3>
+                <p>{{ partial "partials/loremipsum.html" }}</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-2">
+        <div class="sticky-top" id="toc-sidebar">
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '#toc-sidebar',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '#main-content',
+        // Which headings to grab inside of the contentSelector element.
+        headingSelector: 'h2, h3, h4, h5, h6',
+        activeListItemClass: 'active-li',
+        // For headings inside relative or absolute positioned containers within content.
+        hasInnerContainers: true,
+        collapseDepth: 6,
+    });
+
+</script>
+{{ end }}

@@ -49,23 +49,22 @@ main {
 }
 
 .btn-toggle-nav a {
+    color: var(--bs-dark);
     padding: .1875rem .5rem;
     margin-top: .125rem;
     margin-left: 1.25rem;
     text-decoration: none;
-}
 
-.btn-toggle-nav a:hover,
-.btn-toggle-nav a:focus {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-decoration-color: #000000;
-}
+    &:hover, &:focus {
+        color: var(--bs-dark);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-decoration-color: var(--bs-primary);
+    }
 
-.btn-toggle-nav a.active {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-decoration-color: #e30400;
+    &.active {
+        color: var(--bs-primary);
+    }
 }
 
 .scrollarea {

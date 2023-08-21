@@ -2,3 +2,6 @@ baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'ddc-intranet'
+
+[markup.goldmark.renderer]
+  unsafe = true

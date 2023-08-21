@@ -30,16 +30,16 @@
                     {{ $isCurrentSection := (eq $currentPage.Section .Section) }}
                     <li class="mb-1">
                         <button id="{{ .Title | urlize }}"
-                            class="btn btn-toggle d-inline-flex align-items-center rounded border-0 {{ if $isCurrentSection }}collapsed{{ end }}"
+                            class="btn btn-toggle d-inline-flex align-items-center rounded border-0 {{ if not $isCurrentSection }}collapsed{{ end }}"
                             data-bs-toggle="collapse" data-bs-target="#{{ .Title | urlize }}-collapse"
-                            aria-expanded="false">
+                            aria-expanded="{{ if $isCurrentSection }}true{{ else }}false{{ end }}">
                             {{ .Title }}
                         </button>
                         <div class="collapse {{ if $isCurrentSection }}show{{ end }}" id="{{ .Title | urlize }}-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
                                 {{ range .Pages }}
                                 <li><a href="{{ .RelPermalink }}" id="{{ .Title | urlize }}"
-                                        class="link-dark d-inline-flex rounded {{ if eq $currentPage . }}active{{ end }}">{{ .Title }}</a> 
+                                        class="d-inline-flex rounded {{ if eq $currentPage . }}active{{ end }}">{{ .Title }}</a> 
                                         
                                 </li>
                                 {{ end }}
@@ -92,7 +92,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a class="text-white" href="#">DDC Intranet</a></li>
-                                <li class="breadcrumb-item"><a class="text-white" href="#">Capabilities</a></li>
+                                <li class="breadcrumb-item"><a class="text-white" href="#">{{ .CurrentSection.Title }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">
                                     <span class="visually-hidden">{{ .Title }}</span>
                                 </li>
